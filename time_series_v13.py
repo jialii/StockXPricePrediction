@@ -215,7 +215,6 @@ def getAttributeFromUrl(url):
     release_price = soup.find_all('p', class_="chakra-text css-imcdqs")[2].text
 
     # if (release_date.startswith('20')):
-    #   #fuck you StockX what kind of lunatics randomly switches between ISO and US format this is pure bullshit
     #   datetime_obj = datetime.strptime(release_date,"%Y/%m/%d")
     # else:
     #   datetime_obj = datetime.strptime(release_date,"%m/%d/%Y")
@@ -363,9 +362,7 @@ def main(shoeurl):
     px.line(PCT, y='Daily_Change')
 
     """eliminate the duplicate dates that sometimes appear in stockx's website. 
-
-  FUCK YOU STOCKX AND YOUR SHITTY WEBSITE
-  """
+    """
 
     PCT = PCT.drop_duplicates(subset=['Date'], keep='last')
     PCT
